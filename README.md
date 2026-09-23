@@ -1,6 +1,48 @@
 # xianyunruoyou
 ## 仓库目录结构
 
+```text
+xianyunruoyou/
+├── README.md               # 项目协作文档（本文件）
+├── .gitignore              # 忽略组委会原始数据（data/raw/）及临时文件
+│
+├── data/                   # A｜数据与GIS：数据层
+│   ├── raw/                # 组委会下发的原始数据（仅本地使用，不入公开仓库）
+│   ├── cleaned/            # QGIS清洗、坐标转换后的数据（Shapefile/GeoJSON）
+│   └── tables/             # 基地属性数据表（CSV/Excel，A7交付，供本体实例化使用）
+│
+├── gis/                    # A｜数据与GIS：WebGIS前端（CesiumJS/MapLibre）
+│
+├── ontology/               # B｜本体建模
+│   ├── protege/            # Protégé工程文件（.owl本体）
+│   ├── axioms/             # 公理集与五元组框架设计（E/A/R/F/Ax）
+│   └── individuals/        # 本体实例化（ABox三元组库）
+│
+├── reasoning/              # C｜推理与溯源
+│   ├── sparql/             # SPARQL查询集（状态/关系/反事实查询）
+│   ├── confidence/         # 置信度标注与D-S证据理论合成模块
+│   ├── rules/              # 行为函数F的状态迁移规则（SWRL/Drools）
+│   └── prov/               # PROV-O溯源记录（实体—活动—代理）
+│
+├── validation/             # D｜校验与文档
+│   ├── shapes/             # SHACL形状文件（.ttl）
+│   └── reports/            # SHACL校验报告、一致性检查记录
+│
+├── docs/                   # D｜校验与文档：文档区
+│   ├── design/             # 本体设计文档、五元组框架说明
+│   ├── base-notes/         # 基地详细说明文档（地理位置/功能定位/设施构成/作战意义）
+│   ├── reports/            # 失效边界说明、Brier分数校准报告、复现测试记录
+│   └── meetings/           # 每周例会记录
+│
+├── scripts/                # 工具脚本（数据导入PostGIS、部署、校验等）
+└── deliverables/           # D8最终整合交付包
+```
+
+**说明**：
+- 目录与角色的对应关系：`data/`、`gis/` 归 A；`ontology/` 归 B；`reasoning/` 归 C；`validation/`、`docs/` 归 D；`scripts/`、`deliverables/` 共用。
+- `data/raw/` 已在 `.gitignore` 中排除，组委会下发数据仅在赛事范围内本地处理，不上传公开平台。
+- 空目录下已放置 `.gitkeep`，确保目录结构可随 Git 提交。
+
 ## 协作文档
 ### 1. 项目目标
 
