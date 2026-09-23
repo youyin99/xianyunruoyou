@@ -322,3 +322,6 @@ yarn-error.log*
 *.temp
 *.swp
 .cache/
+
+# ---------- 数据 ----------
+data/
