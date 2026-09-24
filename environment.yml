@@ -1,0 +1,40 @@
+# xianyunruoyou 项目 conda 环境
+# 覆盖任务清单中的 Python 需求：
+#   A｜数据与GIS: geopandas / pandas / openpyxl（QGIS 清洗后的数据表处理）, psycopg2（导入 PostGIS）
+#   B｜本体建模:  rdflib（OWL/ABox 三元组处理）
+#   C｜推理与溯源: rdflib（SPARQL）, prov（PROV-O 溯源）
+#   D｜校验与文档: pyshacl（SHACL 校验）
+# 注意：Protégé、HermiT、Jena Fuseki、QGIS、PostgreSQL 为独立软件，按 README 单独安装。
+name: xianyunruoyou
+
+# 国内网络环境下 conda-forge 官方源不稳定，此处使用清华 TUNA 镜像；
+# 海外网络可换回官方源：
+# channels:
+#   - conda-forge
+#   - nodefaults
+channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge
+  - nodefaults
+
+dependencies:
+  - python=3.11
+
+  # ── 数据处理与 GIS ──
+  - pandas          # 基地属性数据表（CSV）
+  - openpyxl        # Excel 读写
+  - geopandas       # Shapefile/GeoJSON 空间数据处理
+  - pyogrio         # geopandas 的 OGR 引擎
+  - shapely         # 几何对象
+  - pyproj          # 坐标参考系统转换
+
+  # ── RDF / 本体 / SPARQL / 校验 ──
+  - rdflib          # RDF 图、SPARQL 查询、Turtle/N-Triples 读写
+  - pyshacl         # SHACL 校验（依赖 rdflib）
+  - prov            # W3C PROV 数据模型（PROV-O 溯源记录）
+
+  # ── 数据库（PostGIS 导入脚本）──
+  - psycopg2        # PostgreSQL/PostGIS 连接
+
+  # ── 工具 ──
+  - ipykernel       # 便于在 Jupyter 中注册本环境
+  - pip
