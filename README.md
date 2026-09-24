@@ -213,7 +213,7 @@ CesiumJS或MapLibre：WebGIS前端。CesiumJS从 https://cesium.com/downloads/ �
 **环境配置要点**
 
 - JDK/JRE：Protégé和Jena Fuseki均依赖Java环境，建议安装JDK 11或以上版本。
-- Python环境：pySHACL依赖Python 3.8+，建议使用虚拟环境隔离依赖。
+- Python环境：pySHACL依赖Python 3.8+。仓库根目录提供 `environment.yml`（Python 3.11，含 rdflib、pyshacl、prov、pandas、geopandas、pyproj、psycopg2、ipykernel；channels 已配置清华镜像，海外网络可换回 conda-forge）。创建并激活：`conda env create -f environment.yml` → `conda activate xianyunruoyou`。
 - Git：本体文件随代码入库，需配置Git仓库。
 - PostGIS空间扩展：安装PostgreSQL后需在目标数据库中执行 CREATE EXTENSION postgis; 才能使用空间函数。
 
