@@ -1,0 +1,124 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xy: <http://xianyunruoyou.org/ontology/target#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ============================================================
+# xianyunruoyou SHACL shapes — D2 前置预研（B 角色代产骨架）
+# 依据 docs/design/property-classification.md v1.0 取值约束列
+# 状态：骨架预检版，D2 由 D 角色评审后转正
+# ============================================================
+
+<http://xianyunruoyou.org/ontology/shapes> a owl:Ontology ;
+    rdfs:comment "SHACL shapes for xy-target TBox/ABox integrity (Ax8 + B4 constraints)"@en .
+
+# ── Ax8: strategicValueScore ∈ [0,1] ──────────────────────────
+xy:StrategicValueShape a sh:NodeShape ;
+    sh:targetObjectsOf xy:func.strategicValueScore ;
+    sh:datatype xsd:decimal ;
+    sh:minInclusive 0 ;
+    sh:maxInclusive 1 ;
+    sh:message "strategicValueScore 必须为 [0,1] 内的 decimal（Ax8）" .
+
+# ── B4: 冗余指数/防御覆盖率 ∈ [0,1] ──────────────────────────
+xy:RatioShape a sh:NodeShape ;
+    sh:targetObjectsOf xy:vuln.redundancyIndex, xy:vuln.defenderCoverageRatio ;
+    sh:datatype xsd:decimal ;
+    sh:minInclusive 0 ;
+    sh:maxInclusive 1 .
+
+# ── Ax2: 跑道恰从属一个基地（SHACL 层，OWL 传递属性禁基数） ──
+xy:RunwayPartOfShape a sh:NodeShape ;
+    sh:targetClass xy:Runway ;
+    sh:property [
+        sh:path xy:rel.partOf ;
+        sh:class xy:MilitaryBase ;
+        sh:qualifiedValueShape [ sh:class xy:MilitaryBase ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:qualifiedMaxCount 1 ;
+        sh:message "跑道必须且只能从属于一个军事基地（Ax2）" ;
+    ] .
+
+# ── Ax7: 跑道必有长度（OWL 基数 + SHACL 双保险） ──────────────
+xy:RunwayLengthShape a sh:NodeShape ;
+    sh:targetClass xy:Runway ;
+    sh:property [
+        sh:path xy:obs.runwayLengthM ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message "跑道必须有且仅有一个正整数长度值（Ax7）" ;
+    ] .
+
+# ── Ax10: 无溯源的断言不进入推理 ──────────────────────────────
+xy:AssertionProvenanceShape a sh:NodeShape ;
+    sh:targetClass xy:Assertion ;
+    sh:property [
+        sh:path xy:rel.observedBy ;
+        sh:class xy:ProvenanceRecord ;
+        sh:minCount 1 ;
+        sh:message "断言必须挂接至少一条溯源记录（Ax10）" ;
+    ] .
+
+# ── Ax11: 推断断言必有置信度标注 ──────────────────────────────
+xy:InferredConfidenceShape a sh:NodeShape ;
+    sh:targetClass xy:InferredAssertion ;
+    sh:property [
+        sh:path xy:hasConfidence ;
+        sh:class xy:ConfidenceAnnotation ;
+        sh:minCount 1 ;
+        sh:message "推断断言必须携带置信度标注（Ax11）" ;
+    ] .
+
+# ── B4: 推断属性禁止直写（断言模式一致性） ────────────────────
+# 语义：凡 func.*/vuln.* 取值必须经由 InferredAssertion 断言个体，
+# 而非直接出现在基地/组成个体上。D2 可用 SPARQL 约束强化。
+xy:InferredDirectWriteShape a sh:NodeShape ;
+    sh:targetClass xy:MilitaryBase ;
+    sh:sparql [
+        sh:message "基地个体上直接出现 func.*/vuln.* 取值，必须改经 InferredAssertion 流程（B4 §2.2/§2.4）" ;
+        sh:select """
+            PREFIX xy: <http://xianyunruoyou.org/ontology/target#>
+            SELECT $this ?value
+            WHERE {
+                { $this xy:func.runwayClass ?value . } UNION
+                { $this xy:func.isMajorOperatingBase ?value . } UNION
+                { $this xy:func.strategicValueScore ?value . } UNION
+                { $this xy:func.missionTypeSet ?value . } UNION
+                { $this xy:vuln.singlePointOfFailureCount ?value . } UNION
+                { $this xy:vuln.repairTimeEstimateHrs ?value . } UNION
+                { $this xy:vuln.defenderCoverageRatio ?value . } UNION
+                { $this xy:vuln.redundancyIndex ?value . }
+            }
+        """ ;
+    ] .
+
+# ── 状态枚举封闭（Ax9） ───────────────────────────────────────
+xy:OperationalStatusShape a sh:NodeShape ;
+    sh:targetObjectsOf xy:state.hasOperationalStatus ;
+    sh:in ( xy:OperationalState xy:DegradedState xy:NonOperationalState xy:UnknownState ) ;
+    sh:message "运作状态必须为封闭枚举之一（Ax9）" .
+
+xy:DamageStateShape a sh:NodeShape ;
+    sh:targetObjectsOf xy:state.hasDamageState ;
+    sh:in ( xy:Undamaged xy:LightDamage xy:SevereDamage xy:Destroyed ) .
+
+xy:ReadinessShape a sh:NodeShape ;
+    sh:targetObjectsOf xy:state.hasReadinessLevel ;
+    sh:in ( xy:ReadinessHigh xy:ReadinessMedium xy:ReadinessLow ) .
+
+# ── 坐标范围（B4 §2.1） ───────────────────────────────────────
+xy:LatitudeShape a sh:NodeShape ;
+    sh:targetObjectsOf xy:obs.latitude ;
+    sh:datatype xsd:decimal ;
+    sh:minInclusive -90.0 ;
+    sh:maxInclusive 90.0 .
+
+xy:LongitudeShape a sh:NodeShape ;
+    sh:targetObjectsOf xy:obs.longitude ;
+    sh:datatype xsd:decimal ;
+    sh:minInclusive -180.0 ;
+    sh:maxInclusive 180.0 .

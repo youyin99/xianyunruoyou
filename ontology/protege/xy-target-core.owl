@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#AircraftParkingApron">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">AircraftParkingApron</rdfs:label>
+    <rdfs:label xml:lang="zh">停机坪</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#beliefIntervalUpper">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">Pl上界</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#ConfidenceAnnotation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#UnknownState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">UnknownState</rdfs:label>
+    <rdfs:label xml:lang="zh">未知</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#StateValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#state.hasOperationalStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">运作状态</rdfs:label>
+    <rdfs:range rdf:resource="http://xianyunruoyou.org/ontology/target#StateValue"/>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryBase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="en">Xianyunruoyou Target Characteristic Ontology</rdfs:label>
+    <rdfs:label xml:lang="zh">西太平洋战区目标特性本体</rdfs:label>
+    <dcterms:title>TO = {E, A, R, F, Ax} TBox v1.0</dcterms:title>
+    <owl:versionIRI rdf:resource="http://xianyunruoyou.org/ontology/target/1.0"/>
+    <rdfs:comment xml:lang="en">TBox only. No ABox/base data (compliance: organizer data stays local). Top-level anchors: BFO 2.0 / CCO v1.3 mapped via skos (see mappings.ttl).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#SortieOperation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Sortie Operation</rdfs:label>
+    <rdfs:label xml:lang="zh">架次行动</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#OperationalActivity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.apronAreaM2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">停机坪面积(m2)</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.aircraftCapacity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">机位数</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#rel.hasComponent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:label xml:lang="zh">组成</rdfs:label>
+    <rdfs:range rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryBase"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_has_part"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.longitude">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">经度</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#JointBase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">JointBase</rdfs:label>
+    <rdfs:label xml:lang="zh">联合基地</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryBase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.componentType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">设施分类(BSR)</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#OperationalActivity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Operational Activity</rdfs:label>
+    <rdfs:label xml:lang="zh">作战活动</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://www.commoncoreontologies.org/cco#ActOfMilitaryProcess"/>
+    <rdfs:comment xml:lang="en">≈ cco:ActOfMilitaryProcess (BFO Process)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#ReadinessLow">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">ReadinessLow</rdfs:label>
+    <rdfs:label xml:lang="zh">战备-低</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#StateValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#rel.sustains">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">保障</rdfs:label>
+    <rdfs:range rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryBase"/>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#FuelDepot"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#ElectronicWarfareSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">ElectronicWarfareSystem</rdfs:label>
+    <rdfs:label xml:lang="zh">电子战系统</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#DefensiveSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#Destroyed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Destroyed</rdfs:label>
+    <rdfs:label xml:lang="zh">摧毁</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#StateValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#ConfidenceAnnotation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Confidence Annotation</rdfs:label>
+    <rdfs:label xml:lang="zh">置信度标注</rdfs:label>
+    <rdfs:comment xml:lang="en">Bellenger D-S pattern (arXiv:1106.3876)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#func.missionTypeSet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">任务类型集</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#InferredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#conflictCoefficient">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">冲突系数K</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#ConfidenceAnnotation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#rel.controlledBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">管辖</rdfs:label>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryBase"/>
+    <rdfs:subPropertyOf rdf:resource="https://www.commoncoreontologies.org/ero#controlled_by"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2416fa468f7c4bc48067f73cdb3f2da3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://xianyunruoyou.org/ontology/target#rel.observedBy"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="http://xianyunruoyou.org/ontology/target#ProvenanceRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#MilitaryInstallation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Military Installation</rdfs:label>
+    <rdfs:label xml:lang="zh">军事设施</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://www.commoncoreontologies.org/cco#Facility"/>
+    <rdfs:comment xml:lang="en">≈ cco:Facility (BFO MaterialEntity)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.runwayLengthM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">跑道长度(米)</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#ReadinessHigh">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">ReadinessHigh</rdfs:label>
+    <rdfs:label xml:lang="zh">战备-高</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#StateValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.totalAcres">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">总面积(英亩)</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#MilitaryBase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Military Base</rdfs:label>
+    <rdfs:label xml:lang="zh">军事基地</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryInstallation"/>
+    <rdfs:subClassOf rdf:nodeID="Na213f611f3c549deb8b16cea17c94646"/>
+    <rdfs:subClassOf rdf:nodeID="N6f91a707ff92439da35b06d6011fd95d"/>
+    <rdfs:comment xml:lang="en">narrowMatch cco:Facility; CCO has no dedicated Base class</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#InferredAssertion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Inferred Assertion</rdfs:label>
+    <rdfs:label xml:lang="zh">推断断言</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#Assertion"/>
+    <rdfs:subClassOf rdf:nodeID="N94fba4fb701f4a228cbde1a85773e33c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#func.strategicValueScore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">战略价值分</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#InferredProperty"/>
+    <rdfs:comment xml:lang="en">SHACL: sh:minInclusive 0 ; sh:maxInclusive 1 (see validation/shapes)</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#beliefIntervalLower">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">Bel下界</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#ConfidenceAnnotation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#confidenceMass">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">mass值</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#ConfidenceAnnotation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.runwayWidthM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">跑道宽度(米)</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#PortFacility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">PortFacility</rdfs:label>
+    <rdfs:label xml:lang="zh">港口设施</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#Runway">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Runway</rdfs:label>
+    <rdfs:label xml:lang="zh">跑道</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+    <rdfs:subClassOf rdf:nodeID="N8dbace4c2ba34f92bb820c87395b49c2"/>
+    <rdfs:subClassOf rdf:nodeID="N35a6dd3d4753403a862f0c7420db25ca"/>
+    <rdfs:comment xml:lang="en">Ax2: asserted runway MUST have exactly one partOf MilitaryBase — enforced via SHACL sh:property [ sh:path xy:rel.partOf ; sh:qualifiedValueShape MilitaryBase ; sh:qualifiedMinCount 1 ; sh:qualifiedMaxCount 1 ]</rdfs:comment>
+    <owl:disjointWith rdf:resource="http://xianyunruoyou.org/ontology/target#AircraftShelter"/>
+    <owl:disjointWith rdf:resource="http://xianyunruoyou.org/ontology/target#FuelDepot"/>
+    <owl:disjointWith rdf:resource="http://xianyunruoyou.org/ontology/target#MunitionsStorage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#AircraftShelter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">AircraftShelter</rdfs:label>
+    <rdfs:label xml:lang="zh">机库/掩体</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#rel.observedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">观测溯源</rdfs:label>
+    <rdfs:range rdf:resource="http://xianyunruoyou.org/ontology/target#ProvenanceRecord"/>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#Assertion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#rel.connectsTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdfs:label xml:lang="zh">连通</rdfs:label>
+    <rdfs:range rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+    <rdfs:subPropertyOf rdf:resource="https://www.commoncoreontologies.org/ero#physically_connected_to"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Na213f611f3c549deb8b16cea17c94646">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://xianyunruoyou.org/ontology/target#rel.hasComponent"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#rel.supports">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">支撑</rdfs:label>
+    <rdfs:range rdf:resource="http://xianyunruoyou.org/ontology/target#OperationalActivity"/>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_realized_in"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#LogisticsOperation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Logistics Operation</rdfs:label>
+    <rdfs:label xml:lang="zh">后勤行动</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#OperationalActivity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#assertionMode">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">断言模式(Measured|Inferred)</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#hasConfidence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">具有置信度</rdfs:label>
+    <rdfs:range rdf:resource="http://xianyunruoyou.org/ontology/target#ConfidenceAnnotation"/>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#Assertion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#DegradedState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">DegradedState</rdfs:label>
+    <rdfs:label xml:lang="zh">降级</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#StateValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#InferredProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">Inferred Property</rdfs:label>
+    <rdfs:label xml:lang="zh">推断特性</rdfs:label>
+    <rdfs:comment xml:lang="en">Abstract super-property: asserted data properties MUST be sub-properties of exactly one of {MeasuredProperty, InferredProperty} (B4 four-class scheme).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#Assertion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Assertion</rdfs:label>
+    <rdfs:label xml:lang="zh">断言</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://www.commoncoreontologies.org/cco#InformationArtifact"/>
+    <rdfs:subClassOf rdf:nodeID="N2416fa468f7c4bc48067f73cdb3f2da3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#vuln.redundancyIndex">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">冗余指数</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#InferredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#AirBase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">AirBase</rdfs:label>
+    <rdfs:label xml:lang="zh">空军基地</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryBase"/>
+    <owl:disjointWith rdf:resource="http://xianyunruoyou.org/ontology/target#NavalBase"/>
+    <owl:disjointWith rdf:resource="http://xianyunruoyou.org/ontology/target#ArmyBase"/>
+    <owl:disjointWith rdf:resource="http://xianyunruoyou.org/ontology/target#MarineCorpsBase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#MeasuredProperty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">Measured Property</rdfs:label>
+    <rdfs:label xml:lang="zh">可观测特性(实测)</rdfs:label>
+    <rdfs:comment xml:lang="en">Abstract super-property: asserted data properties MUST be sub-properties of exactly one of {MeasuredProperty, InferredProperty} (B4 four-class scheme).</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#AirDefensePosition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">AirDefensePosition</rdfs:label>
+    <rdfs:label xml:lang="zh">防空阵地</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#LightDamage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">LightDamage</rdfs:label>
+    <rdfs:label xml:lang="zh">轻损</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#StateValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#rel.homeportOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">驻泊</rdfs:label>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#NavalBase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#func.isMajorOperatingBase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">主要作战基地</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#InferredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#NavalBase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">NavalBase</rdfs:label>
+    <rdfs:label xml:lang="zh">海军基地</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryBase"/>
+    <owl:disjointWith rdf:resource="http://xianyunruoyou.org/ontology/target#ArmyBase"/>
+    <owl:disjointWith rdf:resource="http://xianyunruoyou.org/ontology/target#MarineCorpsBase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#OperationalState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">OperationalState</rdfs:label>
+    <rdfs:label xml:lang="zh">可运作</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#StateValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#ReadinessMedium">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">ReadinessMedium</rdfs:label>
+    <rdfs:label xml:lang="zh">战备-中</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#StateValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#CommandAndControlFacility">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">CommandAndControlFacility</rdfs:label>
+    <rdfs:label xml:lang="zh">指挥设施</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#vuln.singlePointOfFailureCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">单点失效源数</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#InferredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#FuelDepot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">FuelDepot</rdfs:label>
+    <rdfs:label xml:lang="zh">油库</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+    <owl:disjointWith rdf:resource="http://xianyunruoyou.org/ontology/target#MunitionsStorage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#state.isCombatCapable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">可战性</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryBase"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#InferredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.acresOwned">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">自有土地(英亩)</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.hardenedShelterCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">加固掩体数</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.buildingLeasedCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">租赁建筑数</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#StatusTransitionProcess">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Status Transition Process</rdfs:label>
+    <rdfs:label xml:lang="zh">状态迁移过程</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_Process"/>
+    <rdfs:comment xml:lang="en">行为函数 F 的发生体载体</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8dbace4c2ba34f92bb820c87395b49c2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://xianyunruoyou.org/ontology/target#rel.partOf"/>
+    <owl:someValuesFrom rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryBase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#RadarStation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">RadarStation</rdfs:label>
+    <rdfs:label xml:lang="zh">雷达站</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#state.hasReadinessLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">战备等级</rdfs:label>
+    <rdfs:range rdf:resource="http://xianyunruoyou.org/ontology/target#StateValue"/>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryBase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#ProvenanceRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Provenance Record</rdfs:label>
+    <rdfs:label xml:lang="zh">溯源记录</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:comment xml:lang="en">exactMatch prov:Entity</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.nearestCity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">最近城市</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#InstallationComponent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Installation Component</rdfs:label>
+    <rdfs:label xml:lang="zh">设施组成</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryInstallation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#vuln.defenderCoverageRatio">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">防御覆盖率</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#InferredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#DefensiveSystem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Defensive System</rdfs:label>
+    <rdfs:label xml:lang="zh">防御系统装备</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://www.commoncoreontologies.org/cco#Artifact"/>
+    <rdfs:comment xml:lang="en">≈ cco:Artifact</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#SevereDamage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">SevereDamage</rdfs:label>
+    <rdfs:label xml:lang="zh">重损</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#StateValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#MunitionsStorage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">MunitionsStorage</rdfs:label>
+    <rdfs:label xml:lang="zh">弹药库</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#GunsBattery">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">GunsBattery</rdfs:label>
+    <rdfs:label xml:lang="zh">高炮连</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#DefensiveSystem"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#StateValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">State Value</rdfs:label>
+    <rdfs:label xml:lang="zh">状态取值</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#Undamaged">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Undamaged</rdfs:label>
+    <rdfs:label xml:lang="zh">未受损</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#StateValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.countryRegion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">国家/地区</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N94fba4fb701f4a228cbde1a85773e33c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://xianyunruoyou.org/ontology/target#hasConfidence"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="http://xianyunruoyou.org/ontology/target#ConfidenceAnnotation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#SAMBattery">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">SAMBattery</rdfs:label>
+    <rdfs:label xml:lang="zh">防空导弹连</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#DefensiveSystem"/>
+    <owl:disjointWith rdf:resource="http://xianyunruoyou.org/ontology/target#GunsBattery"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#Taxiway">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Taxiway</rdfs:label>
+    <rdfs:label xml:lang="zh">滑行道</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#MeasuredAssertion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Measured Assertion</rdfs:label>
+    <rdfs:label xml:lang="zh">实测断言</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#Assertion"/>
+    <owl:disjointWith rdf:resource="http://xianyunruoyou.org/ontology/target#InferredAssertion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.magazineCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">弹药库数</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.latitude">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">纬度</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#ArmyBase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">ArmyBase</rdfs:label>
+    <rdfs:label xml:lang="zh">陆军基地</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryBase"/>
+    <owl:disjointWith rdf:resource="http://xianyunruoyou.org/ontology/target#MarineCorpsBase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#NonOperationalState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">NonOperationalState</rdfs:label>
+    <rdfs:label xml:lang="zh">不可运作</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#StateValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.plantReplacementValueM">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">重置价值(百万美元)</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6f91a707ff92439da35b06d6011fd95d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://xianyunruoyou.org/ontology/target#rel.controlledBy"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:minQualifiedCardinality>
+    <owl:onClass rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryOrganization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.buildingOwnedCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">自有建筑数</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#func.runwayClass">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">跑道等级</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#InferredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#MarineCorpsBase">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">MarineCorpsBase</rdfs:label>
+    <rdfs:label xml:lang="zh">陆战队基地</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryBase"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#obs.fuelStorageCapacityKL">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">油库容量(kL)</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#MeasuredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#rel.partOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:label xml:lang="zh">从属</rdfs:label>
+    <rdfs:range rdf:resource="http://xianyunruoyou.org/ontology/target#MilitaryBase"/>
+    <rdfs:domain rdf:resource="http://xianyunruoyou.org/ontology/target#InstallationComponent"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_part_of"/>
+    <owl:inverseOf rdf:resource="http://xianyunruoyou.org/ontology/target#rel.hasComponent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#vuln.repairTimeEstimateHrs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="zh">修复时间估计(小时)</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:subPropertyOf rdf:resource="http://xianyunruoyou.org/ontology/target#InferredProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#state.hasDamageState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="zh">受损状态</rdfs:label>
+    <rdfs:range rdf:resource="http://xianyunruoyou.org/ontology/target#StateValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N35a6dd3d4753403a862f0c7420db25ca">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://xianyunruoyou.org/ontology/target#obs.runwayLengthM"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:cardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xianyunruoyou.org/ontology/target#MilitaryOrganization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Military Organization</rdfs:label>
+    <rdfs:label xml:lang="zh">军事组织</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://www.commoncoreontologies.org/cco#Agent"/>
+  </rdf:Description>
+</rdf:RDF>

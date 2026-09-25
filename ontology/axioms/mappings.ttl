@@ -1,0 +1,76 @@
+@prefix bfo: <http://purl.obolibrary.org/obo/BFO_> .
+@prefix cco: <https://www.commoncoreontologies.org/cco#> .
+@prefix ero: <https://www.commoncoreontologies.org/ero#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix ro: <http://purl.obolibrary.org/obo/RO_> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xy: <http://xianyunruoyou.org/ontology/target#> .
+
+xy:AirBase skos:narrowMatch xy:MilitaryBase .
+
+xy:AirDefensePosition skos:narrowMatch cco:Facility .
+
+xy:AircraftParkingApron skos:narrowMatch cco:Facility .
+
+xy:AircraftShelter skos:narrowMatch cco:Facility .
+
+xy:ArmyBase skos:narrowMatch xy:MilitaryBase .
+
+xy:CommandAndControlFacility skos:narrowMatch cco:Facility .
+
+xy:ConfidenceAnnotation skos:closeMatch xy:DS_Confidence .
+
+xy:ElectronicWarfareSystem skos:narrowMatch xy:DefensiveSystem .
+
+xy:FuelDepot skos:narrowMatch cco:Facility .
+
+xy:GunsBattery skos:narrowMatch xy:DefensiveSystem .
+
+xy:InferredAssertion skos:narrowMatch xy:Assertion .
+
+xy:JointBase skos:narrowMatch xy:MilitaryBase .
+
+xy:MarineCorpsBase skos:narrowMatch xy:MilitaryBase .
+
+xy:MeasuredAssertion skos:narrowMatch xy:Assertion .
+
+xy:MilitaryInstallation skos:closeMatch cco:Facility .
+
+xy:MunitionsStorage skos:narrowMatch cco:Facility .
+
+xy:NavalBase skos:narrowMatch xy:MilitaryBase .
+
+xy:OperationalActivity skos:closeMatch cco:ActOfMilitaryProcess .
+
+xy:PortFacility skos:narrowMatch cco:Facility .
+
+xy:ProvenanceRecord skos:exactMatch prov:Entity .
+
+xy:RadarStation skos:narrowMatch cco:Facility .
+
+xy:Runway skos:narrowMatch cco:Facility .
+
+xy:SAMBattery skos:narrowMatch xy:DefensiveSystem .
+
+xy:StatusTransitionProcess skos:narrowMatch bfo:Process .
+
+xy:Taxiway skos:narrowMatch cco:Facility .
+
+xy:rel.connectsTo skos:closeMatch ero:physically_connected_to .
+
+xy:rel.controlledBy skos:closeMatch ero:controlled_by .
+
+xy:rel.hasComponent skos:exactMatch ro:has_part .
+
+xy:rel.observedBy skos:narrowMatch prov:wasAttributedTo .
+
+xy:rel.partOf skos:exactMatch ro:part_of .
+
+xy:rel.supports skos:closeMatch ro:realized_in .
+
+xy:Assertion skos:narrowMatch cco:InformationArtifact .
+
+xy:DefensiveSystem skos:closeMatch cco:Artifact .
+
+xy:MilitaryBase skos:narrowMatch cco:Facility .
+
